@@ -21,9 +21,8 @@
 <meta property="og:image" content="http://yoursite.com/img/hexo8.png">
 <meta property="og:image" content="http://yoursite.com/img/hexo9.png">
 <meta property="og:image" content="http://yoursite.com/img/hexo10.png">
-<meta property="og:image" content="http://yoursite.com/img/hexo11.png">
 <meta property="og:image" content="http://yoursite.com/img/hexo12.png">
-<meta property="og:updated_time" content="2017-01-15T10:12:37.896Z">
+<meta property="og:updated_time" content="2017-01-15T10:36:37.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo创建博客">
 <meta name="twitter:description" content="前言本人经常想有着能有一个属于自己的写作平台，可以时不时地写一些日志笔记什么的。但毕竟主要学习的方向不是前端没有相关的技能，因此只能靠一些平台搭建简单的可供外网访问的博客平台。而且正好在徐宜生大神的《Android群英传：神兵利器》中有关利用Hexo搭建博客的章节，所以就根据教程自己尝试了一下，最终的结果当然是成功了，这是部署成功后的页面：DoubleCC的博客。不过期间却遇到了不少问题，照本宣科">
@@ -140,19 +139,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: testBlog</div><div class="line">date: 2017-01-15 15:58:15</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
 <p>为什么要添加这个呢？因为如果我们使用命令生成一篇markdown文件编辑时就会看到上面的这串内容。但也只能说有可能会出现问题，因为看下Hello-world那个文件好像就没有。那么就说下如何命令生成，在cd进入目录文件夹下（我的是blog）执行命令   </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new testBlog</div></pre></td></tr></table></figure>
-<p><img src="/img/hexo10.png" alt="image"><br>这时打开source文件夹就可以看到testBlog.文件，打开它就可以编辑内容了。   </p>
-<hr>
-<h6 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h6><p>在对hexo中内容做修改后，如添加和修改博客时，需要对之前静态的Html文件进行重新生成才能发布到服务器上，其指令为   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
-<p><img src="/img/hexo11.png" alt="image"><br>新的静态Html文件将生成到/public文件夹中，生成完毕后可以通过hexo server指令本地预览，或者直接通过以下指令直接发布到服务器上。   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-<p>执行以上部署指令后输入ssh密码即可如下将Github项目更新并部署成功<br><img src="/img/hexo12.png" alt="image">   </p>
+<p><img src="/img/hexo10.png" alt="image"><br>这时打开source文件夹就可以看到testBlog.文件，打开它就可以编辑内容了。<br>如果想要在文章中添加图片的话，则在source文件夹中创建一个img文件夹，并将图片放进去，使用时链接就是/img/图片名。注意，如果有代码块的话代码块“<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">如果想在首页只显示一部分摘要的话则可以在要截取成摘要后另起一行并添加</div></pre></td></tr></table></figure></p>
+<!-- more -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">###### 生成博客   </div><div class="line">在对hexo中内容做修改后，如添加和修改博客时，需要对之前静态的Html文件进行重新生成才能发布到服务器上，其指令为</div></pre></td></tr></table></figure>
+<p>hexo generate<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![image](/img/hexo11.png)   </div><div class="line">新的静态Html文件将生成到/public文件夹中，生成完毕后可以通过hexo server指令本地预览，或者直接通过以下指令直接发布到服务器上。</div></pre></td></tr></table></figure></p>
+<p>hexo deploy<br>```<br>执行以上部署指令后输入ssh密码即可如下将Github项目更新并部署成功<br><img src="/img/hexo12.png" alt="image">   </p>
 <p>发布后通过之前在Github创建的repository的名称直接可以网络访问Hexo博客了。对于博客后期的主题修改或者添加插件什么的就可以慢慢来，毕竟我们写文章才是主要目的，博客优化可以在闲时来当做练习。<br>最后说下其实一些通用的指令是可以缩写的如：<strong>hexo generate</strong> 可以用<strong>hexo g</strong>代替，<strong>hexo server</strong> 可以是<strong>hexo s</strong>，<strong>hexo deploy</strong>可以是<strong>hexo d</strong>。<br>本来想详细地说下步骤，到现在才发现其实很简单，真正耗时的是第一次搭建有可能遇到很多问题。而我也是，在写之前我想把问题和解决方法也写进来，但在解决之后发现那些不是什么问题。一般网上直接就可以搜的到，而且很多指令我目前也没用过。我就是个看热闹的。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/15/使用Hexo创建博客/" data-id="cixyi9rvk0001746np23dbn7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/15/使用Hexo创建博客/" data-id="cixyj252m0001ic6npxdyxs43" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
