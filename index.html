@@ -101,7 +101,8 @@
 <h6 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h6><p>安装hexo位置即表示要将博客本地数据存放在哪里，我想将其放置D盘的blog文件夹下，就在D盘中新建一个blog文件夹，然后进入该目录中执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
 <p><img src="/img/hexo4.png" alt="image">   </p>
 <hr>
-<p>等待安装完毕后如果你想直接将初始化文件放在该文件夹下则执行命令，然后等待安装完毕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install</div><div class="line">```   </div><div class="line"> </div><div class="line">或者在blog文件夹下新创建一个目录如名为hexo，并在里面初始化则执行命令</div></pre></td></tr></table></figure></p>
+<p>等待安装完毕后如果你想直接将初始化文件放在该文件夹下则执行命令，然后等待安装完毕   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install</div><div class="line">```  </div><div class="line"> </div><div class="line">或者在blog文件夹下新创建一个目录如名为hexo，并在里面初始化则执行命令</div></pre></td></tr></table></figure>
 <p>hexo init hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">然后再cd进入该文件夹下执行初始化命令。   </div><div class="line"></div><div class="line">---</div><div class="line"></div><div class="line">待一切都已完成后我们查看是否安装成功，进入初始化的文件夹下执行如下命令将其部署到本地，在本地进行测试服务。</div></pre></td></tr></table></figure></p>
 <p>hexo server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">![image](/img/hexo5.png)   </div><div class="line">可以看到hexo已经运行在http://localhost:4000/上了。只要我们打开该网站就可以预览默认的hexo博客页面了。这就说明我们搭建成功了。我们打开最初初始化的文件夹，我的是D盘的blog。   </div><div class="line">![image](/img/hexo6.png)   </div><div class="line">其中.deploy_git是执行git时生成的文件，source是博客资源文件夹，其中有 _posts用于存放文章，如果有 _drafts则是存放草稿的。themes中放的是hexo主题文件，有个默认的主题。这里第一次使用时我们会做修改的是下面的 _config.yml文件，这里是Hexo的全局配置文件，一些基本的信息就是通过编辑这里改动的。如部署位置。   </div><div class="line">##### Hexo配置   </div><div class="line">###### Github 创建repository   </div><div class="line">Github账号相信大家都有，哪怕像我这种菜鸟也会注册个用来看大神们的分享。   </div><div class="line">首先在Github上创建一个repository（个人主页右上角）选择New repository。   </div><div class="line">![image](/img/hexo7.png)   </div><div class="line">进入创建页面后输入repository名称，名称格式须是 ++你的github名.github.io++。然后填一些其他如描述的信息即可直接create repository创建了。</div><div class="line">###### _config.yml配置文件修改   </div><div class="line">关于这个配置文件的信息官网的文档有详细的说明，我们使用一些对代码有排版的软件打开此文本，如NotePad++。其中有个较为重要的配置，即底部的deploy部分，这里配置如何部署到服务器上。我是根据徐大神教材中的配置，即如下</div></pre></td></tr></table></figure></p>
 <p>deploy:<br>  type: git<br>  repository: git@github.com:ionetwogo/ionetwogo.github.io.git<br>  branch: master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">在这里需注意一定要切换至英文下，不然有时候一些符号的问题可能使配置不规范导致部署不成功，还有就是“：”之后是有个空格的。如我将repository：后面的空格去掉，直接接git@xxxxxx就会有下面的错误。</div></pre></td></tr></table></figure></p>
@@ -123,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/15/使用Hexo创建博客/" data-id="cixyhm8d30001ms6nvn2zjew1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/15/使用Hexo创建博客/" data-id="cixyhu7it00015k6nm4d30p2e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/01/14/hello-world/" data-id="cixyhm8c80000ms6n7q7irya6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/01/14/hello-world/" data-id="cixyhu7it00005k6np0jna2o7" class="article-share-link">Share</a>
       
       
     </footer>
